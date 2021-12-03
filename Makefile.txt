@@ -1,0 +1,10 @@
+all: main.c my_mat.c
+
+connections: connections.o
+	g++ connections.o -o connections
+
+connections.o: $(all)
+	g++ $(all) -o connections.o
+
+clean:
+	rm *.o connections
